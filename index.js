@@ -1,6 +1,9 @@
 const express = require('express');
-const routers = require("./Routes/routers");
 const path = require('path')
+
+const cors = require('cors')
+
+const routers = require("./Routes/routers");
 const { mailRoute } = routers;
 
 const app = express();
@@ -9,7 +12,7 @@ const PORT = 10000;
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 
 const staticDirectory = path.join(__dirname, 'front-end');
@@ -21,6 +24,7 @@ app.get("/", (req, res) => {
 
 
 app.use(mailRoute)
+app.use(cors)
 
 app.use('/*', (req, res) => {
     res.status(404).json({
