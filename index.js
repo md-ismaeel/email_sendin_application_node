@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path')
-
 const cors = require('cors')
 
 const routers = require("./Routes/routers");
 const { mailRoute } = routers;
 
 const app = express();
+app.use(cors())
 
 const PORT = 10000;
 
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 
 app.use(mailRoute)
-app.use(cors)
+
 
 app.use('/*', (req, res) => {
     res.status(404).json({
