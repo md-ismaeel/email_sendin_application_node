@@ -1,2 +1,13 @@
-node_modules
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment-specific files 
+# Environment variable files
 .env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Other files and directories to ignore can be added here
