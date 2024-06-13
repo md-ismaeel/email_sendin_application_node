@@ -25,7 +25,6 @@ app.get("/", (req, res) => {
 
 app.use(mailRoute)
 
-
 app.use('/*', (req, res) => {
     res.status(404).json({
         success: false,
