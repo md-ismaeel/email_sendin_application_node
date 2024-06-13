@@ -14,7 +14,7 @@ const PORT = 10000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const staticDirectory = path.join(__dirname, 'front-end');
+const staticDirectory = path.join(__dirname, 'Front-end');
 console.log(`Serving static files from: ${staticDirectory}`);
 
 // Log directory contents for verification
